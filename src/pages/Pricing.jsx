@@ -77,9 +77,13 @@ const Pricing = () => {
               <span className={`text-sm font-bold ${!isAnnual ? 'text-[hsl(var(--text-primary))]' : 'text-[hsl(var(--text-muted))]'}`}>Mensal</span>
               <button
                 onClick={() => setIsAnnual(!isAnnual)}
-                className="w-16 h-8 glass rounded-full relative p-1 transition-all"
+                className="w-14 h-8 rounded-full relative transition-colors flex items-center"
+                style={{ backgroundColor: isAnnual ? 'hsl(var(--primary))' : '#d1d5db' }}
               >
-                <div className={`w-6 h-6 grad-primary rounded-full transition-all ${isAnnual ? 'translate-x-8' : 'translate-x-0'}`} />
+                <div 
+                  className="w-8 h-8 rounded-full transition-transform" 
+                  style={{ backgroundColor: '#fff', transform: isAnnual ? 'translateX(1.5rem)' : 'translateX(0)', boxShadow: '0 1px 3px rgba(0,0,0,0.3)' }} 
+                />
               </button>
               <div className="flex items-center gap-2">
                 <span className={`text-sm font-bold ${isAnnual ? 'text-[hsl(var(--text-primary))]' : 'text-[hsl(var(--text-muted))]'}`}>Anual</span>
@@ -97,7 +101,10 @@ const Pricing = () => {
                 className={`relative glass rounded-[32px] p-10 flex flex-col border-[hsl(var(--border))] transition-all ${plan.featured ? 'border-[hsl(var(--primary))] shadow-2xl shadow-primary/10 scale-105 z-10' : 'hover:border-[hsl(var(--border-hover))]'}`}
               >
                 {plan.featured && (
-                  <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 grad-primary text-white text-xs font-bold px-4 py-1.5 rounded-full shadow-xl uppercase">
+                  <div 
+                    className="absolute text-white text-xs font-bold px-4 py-1.5 rounded-full shadow-lg uppercase"
+                    style={{ top: 0, left: '50%', transform: 'translate(-50%, -50%)', backgroundColor: 'hsl(var(--primary))' }}
+                  >
                     Mais Popular
                   </div>
                 )}
@@ -117,7 +124,7 @@ const Pricing = () => {
                     <div className="text-3xl font-extrabold tracking-tight">{plan.price}</div>
                   )}
                   {isAnnual && typeof plan.price === 'number' && (
-                    <div className="text-[hsl(var(--accent-emerald))] text-[10px] font-bold mt-1 uppercase">Faturamento Anual</div>
+                    <div className="text-[hsl(var(--secondary))] text-[10px] font-bold mt-1 uppercase">Faturamento Anual</div>
                   )}
                 </div>
 
@@ -136,14 +143,15 @@ const Pricing = () => {
                     Infra: {plan.infra}
                   </div>
                   <div className="flex items-center gap-3 text-xs font-bold text-[hsl(var(--text-muted))] uppercase tracking-widest">
-                    <Shield size={14} className="text-[hsl(var(--accent-emerald))]" />
+                    <Shield size={14} className="text-[hsl(var(--secondary))]" />
                     SLA: {plan.sla} Disponibilidade
                   </div>
                 </div>
 
                 <Link
                   to="/contato"
-                  className={`w-full py-4 rounded-2xl font-bold text-center transition-all ${plan.featured ? 'grad-primary text-white shadow-xl shadow-primary/20 hover:scale-105' : 'glass hover:bg-[hsl(var(--bg-secondary))]'}`}
+                  className={`w-full py-4 rounded-2xl font-bold text-center transition-all ${plan.featured ? 'text-white shadow-lg hover:scale-105' : 'glass hover:bg-secondary'}`}
+                  style={plan.featured ? { backgroundColor: 'hsl(var(--primary))' } : {}}
                 >
                   {typeof plan.price === 'number' ? 'Começar Agora' : 'Falar com Vendas'}
                 </Link>

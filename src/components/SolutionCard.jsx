@@ -36,7 +36,7 @@ const SolutionCard = ({ title, description, features, path, icon: Icon, colorCla
 
         <Link
           to={path}
-          className="flex items-center justify-between w-full p-4 rounded-xl glass hover:grad-primary hover:text-white transition-all font-bold group/btn"
+          className="flex items-center justify-between w-full p-4 rounded-xl glass hover:bg-primary hover:text-white transition-all font-medium group/btn text-primary"
         >
           Saiba Mais
           <ArrowRight size={20} className="group-hover/btn:translate-x-2 transition-transform" />

@@ -33,8 +33,8 @@ const Navbar = () => {
           <div className="w-10 h-10 flex-shrink-0">
             <img src="/assets/logo.png" alt="AutomaçõesTec" className="w-full h-full object-contain" />
           </div>
-          <span className="text-xl font-extrabold tracking-tight hidden lg:block">
-            Automações<span className="text-grad">Tec</span>
+          <span className="text-xl font-extrabold tracking-tight hidden lg:block text-primary">
+            Automações<span className="font-light">Tec</span>
           </span>
         </Link>
 
@@ -44,8 +44,8 @@ const Navbar = () => {
             <Link
               key={link.path}
               to={link.path}
-              className={`text-sm font-semibold transition-colors hover:text-grad ${
-                location.pathname === link.path ? 'text-grad' : 'text-secondary'
+              className={`text-sm font-semibold transition-colors hover:text-primary ${
+                location.pathname === link.path ? 'text-primary' : 'text-secondary'
               }`}
             >
               {link.name}
@@ -53,7 +53,7 @@ const Navbar = () => {
           ))}
           <Link
             to="/contato"
-            className="grad-primary px-6 py-2.5 rounded-full text-sm font-bold shadow-lg hover:shadow-primary/20 transition-all hover:scale-105 text-white"
+            className="bg-primary text-white px-6 py-2.5 rounded-full text-sm font-medium transition-all hover:bg-secondary"
           >
             Agendar Demonstração
           </Link>
@@ -86,13 +86,13 @@ const Navbar = () => {
                   className="flex items-center justify-between text-lg font-semibold border-b border-accent pb-2"
                 >
                   {link.name}
-                  <ChevronRight size={18} className="text-brand-primary" />
+                  <ChevronRight size={18} className="text-primary" />
                 </Link>
               ))}
               <Link
                 to="/contato"
                 onClick={() => setIsOpen(false)}
-                className="grad-primary w-full py-4 rounded-2xl text-center font-bold text-lg shadow-xl text-white"
+                className="bg-primary text-white w-full py-4 rounded-xl text-center font-medium text-lg"
               >
                 Solicitar Demonstração
               </Link>

@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { GraduationCap, ShieldCheck, BookOpen, Users, DollarSign, Check, Server, ArrowRight, Activity, Cloud } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import SEO from '../components/SEO';
 
 const Education = () => {
   const [isAnnual, setIsAnnual] = useState(true);
@@ -95,6 +96,10 @@ const Education = () => {
       variants={containerVariants}
       className="pt-24"
     >
+      <SEO 
+        title="EduGestão Pro" 
+        description="Sistema de gestão escolar completo. Matrículas, enturmação, financeiro e diário de classe integrados em um ambiente seguro."
+      />
       {/* Page Header */}
       <section className="py-20 md:py-32 bg-secondary relative overflow-hidden">
         <div className="absolute top-0 left-0 w-full h-full bg-grid-pattern opacity-10" />

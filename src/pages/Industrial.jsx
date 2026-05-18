@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Factory, Activity, AlertTriangle, BarChart3, CheckCircle2, Cog, ArrowRight, Package, ListX, LineChart, Cloud, Check } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import SEO from '../components/SEO';
 
 const Industrial = () => {
   const [isAnnual, setIsAnnual] = useState(true);
@@ -105,6 +106,10 @@ const Industrial = () => {
       variants={containerVariants}
       className="pt-24"
     >
+      <SEO 
+        title="SmartMaint" 
+        description="Manutenção industrial 4.0. Controle preventivo, preditivo e corretivo de ativos. Análise FMEA e cálculo de MTBF."
+      />
       {/* Hero Section */}
       <section className="py-20 md:py-32 relative overflow-hidden bg-slate-900 text-white">
         <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-orange-500/20 blur-[120px] rounded-full" />

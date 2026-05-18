@@ -22,27 +22,31 @@ const ScrollToTop = () => {
   return null;
 };
 
+import { HelmetProvider } from 'react-helmet-async';
+
 const App = () => {
   return (
-    <Router>
-      <ScrollToTop />
-      <div className="app-container">
-        <Navbar />
-        <main>
-          <AnimatePresence mode="wait">
-            <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/educacional" element={<Education />} />
-              <Route path="/industrial" element={<Industrial />} />
-              <Route path="/blog" element={<Blog />} />
-              <Route path="/contato" element={<Contact />} />
-              <Route path="/sobre" element={<About />} />
-            </Routes>
-          </AnimatePresence>
-        </main>
-        <Footer />
-      </div>
-    </Router>
+    <HelmetProvider>
+      <Router>
+        <ScrollToTop />
+        <div className="app-container">
+          <Navbar />
+          <main>
+            <AnimatePresence mode="wait">
+              <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/educacional" element={<Education />} />
+                <Route path="/industrial" element={<Industrial />} />
+                <Route path="/blog" element={<Blog />} />
+                <Route path="/contato" element={<Contact />} />
+                <Route path="/sobre" element={<About />} />
+              </Routes>
+            </AnimatePresence>
+          </main>
+          <Footer />
+        </div>
+      </Router>
+    </HelmetProvider>
   );
 };
 

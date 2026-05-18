@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Mail, Phone, MessageSquare, Send, ArrowRight, Globe, Users, Shield } from 'lucide-react';
+import SEO from '../components/SEO';
 
 const Contact = () => {
   return (
@@ -10,6 +11,10 @@ const Contact = () => {
       exit={{ opacity: 0 }}
       className="pt-32 pb-20"
     >
+      <SEO 
+        title="Contato" 
+        description="Entre em contato com a AutomaçõesTec. Agende uma demonstração gratuita das nossas soluções educacionais e industriais."
+      />
       <section className="py-20">
         <div className="container">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-20">

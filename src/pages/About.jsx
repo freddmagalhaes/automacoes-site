@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { ShieldCheck, Target, Eye, Heart, Users, Award } from 'lucide-react';
+import SEO from '../components/SEO';
 
 const About = () => {
   return (
@@ -10,6 +11,10 @@ const About = () => {
       exit={{ opacity: 0 }}
       className="pt-32 pb-20"
     >
+      <SEO 
+        title="Sobre Nós" 
+        description="Conheça a AutomaçõesTec, nossa missão, visão e valores. Simplificando a gestão complexa através de automações inteligentes e seguras."
+      />
       {/* Hero Section */}
       <section className="py-20 relative overflow-hidden">
         <div className="container relative z-10">

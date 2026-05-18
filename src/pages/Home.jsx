@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { GraduationCap, Factory, ShieldCheck, Zap, Globe, ArrowRight, Cloud, Server, Database } from 'lucide-react';
+import SEO from '../components/SEO';
 
 const Home = () => {
   const containerVariants = {
@@ -21,6 +22,10 @@ const Home = () => {
       variants={containerVariants}
       className="pb-20 pt-24"
     >
+      <SEO 
+        title="Início" 
+        description="Soluções nativas na nuvem para escolas de ponta e indústrias 4.0. Escabilidade, segurança AWS e alta performance garantida."
+      />
       {/* Hero Section */}
       <section className="relative py-24 md:py-32 overflow-hidden flex items-center min-h-[90vh]">
         {/* Abstract Background */}

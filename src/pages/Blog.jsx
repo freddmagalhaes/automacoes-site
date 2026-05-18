@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { BookOpen, Calendar, ArrowRight, Tag } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import SEO from '../components/SEO';
 
 const Blog = () => {
   const containerVariants = {
@@ -51,6 +52,10 @@ const Blog = () => {
       variants={containerVariants}
       className="pt-32 pb-20"
     >
+      <SEO 
+        title="Blog" 
+        description="Artigos técnicos, estudos de caso e insights sobre o impacto da automação e computação em nuvem na indústria e na educação."
+      />
       <section className="py-20 relative overflow-hidden">
         <div className="absolute top-0 right-0 w-96 h-96 bg-primary opacity-5 blur-[100px] rounded-full" />
         <div className="container relative z-10">

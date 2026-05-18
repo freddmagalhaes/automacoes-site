@@ -10,9 +10,9 @@ import Footer from './components/Footer';
 import Home from './pages/Home';
 import Education from './pages/Education';
 import Industrial from './pages/Industrial';
-import Pricing from './pages/Pricing';
 import Contact from './pages/Contact';
 import About from './pages/About';
+import Blog from './pages/Blog';
 
 const ScrollToTop = () => {
   const { pathname } = useLocation();
@@ -34,7 +34,7 @@ const App = () => {
               <Route path="/" element={<Home />} />
               <Route path="/educacional" element={<Education />} />
               <Route path="/industrial" element={<Industrial />} />
-              <Route path="/precos" element={<Pricing />} />
+              <Route path="/blog" element={<Blog />} />
               <Route path="/contato" element={<Contact />} />
               <Route path="/sobre" element={<About />} />
             </Routes>

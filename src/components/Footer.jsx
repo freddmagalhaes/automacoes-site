@@ -37,7 +37,6 @@ const Footer = () => {
             <ul className="flex flex-col gap-4 text-sm text-[hsl(var(--text-secondary))]">
               <li><Link to="/educacional" className="hover:text-[hsl(var(--primary))] transition-colors">EduGestão Pro</Link></li>
               <li><Link to="/industrial" className="hover:text-[hsl(var(--secondary))] transition-colors">SmartMaint</Link></li>
-              <li><Link to="/precos" className="hover:text-[hsl(var(--primary))] transition-colors">Planos & Preços</Link></li>
               <li><Link to="/contato" className="hover:text-[hsl(var(--primary))] transition-colors">Consultoria sob medida</Link></li>
             </ul>
           </div>

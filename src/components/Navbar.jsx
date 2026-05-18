@@ -20,7 +20,7 @@ const Navbar = () => {
     { name: 'Início', path: '/' },
     { name: 'EduGestão Pro', path: '/educacional' },
     { name: 'SmartMaint', path: '/industrial' },
-    { name: 'Preços', path: '/precos' },
+    { name: 'Blog', path: '/blog' },
     { name: 'Sobre Nós', path: '/sobre' },
     { name: 'Contato', path: '/contato' },
   ];
@@ -29,13 +29,10 @@ const Navbar = () => {
     <nav className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${scrolled ? 'py-4 glass' : 'py-6 bg-transparent'}`}>
       <div className="container flex justify-between items-center">
         {/* Logo */}
-        <Link to="/" className="flex items-center gap-3 group">
-          <div className="w-10 h-10 flex-shrink-0">
-            <img src="/assets/logo.png" alt="AutomaçõesTec" className="w-full h-full object-contain" />
+        <Link to="/" className="flex items-center group">
+          <div className="w-48 md:w-56 h-auto flex-shrink-0">
+            <img src="/assets/logo.png" alt="AutomaçõesTec" className="w-full h-auto object-contain" />
           </div>
-          <span className="text-xl font-extrabold tracking-tight hidden lg:block text-primary">
-            Automações<span className="font-light">Tec</span>
-          </span>
         </Link>
 
         {/* Desktop Nav */}
@@ -44,9 +41,8 @@ const Navbar = () => {
             <Link
               key={link.path}
               to={link.path}
-              className={`text-sm font-semibold transition-colors hover:text-primary ${
-                location.pathname === link.path ? 'text-primary' : 'text-secondary'
-              }`}
+              className={`text-sm font-semibold transition-colors hover:text-primary ${location.pathname === link.path ? 'text-primary' : 'text-secondary'
+                }`}
             >
               {link.name}
             </Link>

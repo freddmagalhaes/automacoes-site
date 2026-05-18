@@ -91,7 +91,7 @@ const Contact = () => {
         <div className="container text-center">
           <h2 className="text-3xl font-bold mb-8">Prefere um contato direto?</h2>
           <div className="flex flex-col sm:flex-row justify-center gap-6">
-            <a href="https://wa.me/5531989805397" className="bg-[#25D366] text-white px-10 py-5 rounded-2xl font-bold text-lg flex items-center justify-center gap-2 hover:scale-105 transition-all shadow-xl">
+            <a href="https://wa.me/5531989805397" className="text-white px-10 py-5 rounded-2xl font-bold text-lg flex items-center justify-center gap-2 hover:scale-105 transition-all shadow-xl" style={{ backgroundColor: '#25D366' }}>
               Chamar no WhatsApp <ArrowRight size={20} />
             </a>
           </div>

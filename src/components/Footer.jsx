@@ -62,7 +62,7 @@ const Footer = () => {
               </li>
               <li className="flex items-center gap-3">
                 <Mail size={16} className="text-[hsl(var(--primary))]" />
-                atendimento@automacao.tec.br
+                atendimento@automacoes.tec.br
               </li>
               <li className="flex items-center gap-3">
                 <MapPin size={16} className="text-[hsl(var(--primary))]" />

@@ -1,8 +1,10 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { GraduationCap, ShieldCheck, BookOpen, Users, DollarSign, Check, Server, ArrowRight, Activity, Cloud } from 'lucide-react';
+import { GraduationCap, ShieldCheck, BookOpen, Users, DollarSign, Check, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import SEO from '../components/SEO';
+
+const brl = (n) => n.toLocaleString('pt-BR');
 
 const Education = () => {
   const [isAnnual, setIsAnnual] = useState(true);
@@ -21,7 +23,7 @@ const Education = () => {
     {
       icon: ShieldCheck,
       title: "Visão Multi-tenant",
-      desc: "Administre várias escolas na mesma conta. Os dados são blindados (RLS), garantindo isolamento total de informações entre unidades escolares."
+      desc: "Administre várias escolas na mesma conta. Cada unidade enxerga apenas os próprios dados, com isolamento por escola no banco de dados."
     },
     {
       icon: BookOpen,
@@ -31,61 +33,55 @@ const Education = () => {
     {
       icon: Users,
       title: "Dashboard de RH",
-      desc: "Gestão inteligente de profissionais. Diferencie Efetivos de Designados e receba alertas automáticos de vencimento de contratos temporários."
+      desc: "Gestão de profissionais. Diferencie Efetivos de Designados e acompanhe o vencimento dos contratos temporários."
     },
     {
       icon: DollarSign,
       title: "Gestão Financeira",
-      desc: "Acompanhamento consolidado do fluxo de caixa escolar, inadimplência de mensalidades e controle de verbas públicas."
+      desc: "Acompanhamento do fluxo de caixa escolar, da inadimplência de mensalidades e do controle de verbas públicas."
     }
   ];
 
+  // Preço anual = 10/12 do mensal (2 meses grátis), cobrado adiantado.
   const plans = [
     {
       name: "Escola Básica",
       desc: "Para pequenas instituições com até 500 alunos.",
-      price: isAnnual ? 490 : 590,
+      monthly: 590,
+      annual: 490,
       features: [
         "Até 500 alunos matriculados",
         "Acesso para toda a equipe escolar",
         "Módulo Acadêmico e RH",
         "Geração de Relatórios em PDF",
-        "Suporte por E-mail"
-      ],
-      infra: "AWS EC2 t3.small shared",
-      sla: "99.5%",
-      color: "bg-slate-200"
+        "Suporte por e-mail"
+      ]
     },
     {
       name: "Escola Profissional",
-      desc: "Para escolas médias e focadas em tecnologia. Até 2000 alunos.",
-      price: isAnnual ? 990 : 1190,
+      desc: "Para escolas médias, com até 2000 alunos.",
+      monthly: 1190,
+      annual: 990,
       featured: true,
       features: [
         "Até 2000 alunos matriculados",
-        "Gestão Financeira Avançada",
+        "Gestão financeira: mensalidades, inadimplência e verbas",
         "Portal dos Pais e Alunos",
-        "Integração com Catracas",
-        "Suporte WhatsApp + E-mail"
-      ],
-      infra: "AWS RDS + EC2 t3.medium dedicated",
-      sla: "99.9%",
-      color: "bg-primary"
+        "Tudo do plano Escola Básica",
+        "Suporte por WhatsApp e e-mail"
+      ]
     },
     {
       name: "Rede Enterprise",
-      desc: "Para redes de ensino e secretarias de educação (Multi-escola).",
+      desc: "Para redes de ensino e secretarias de educação (multi-escola).",
       price: "Sob Consulta",
       features: [
-        "Alunos e Unidades Ilimitadas",
-        "Painel Root (Backoffice Central)",
-        "API para Integrações (ERP/Governo)",
-        "Treinamento Onboarding Presencial",
-        "Gerente de Sucesso Dedicado"
-      ],
-      infra: "AWS EC2 Auto-Scaling + RDS Multi-AZ",
-      sla: "99.99%",
-      color: "bg-slate-900"
+        "Alunos e unidades ilimitados",
+        "Painel Root (backoffice central)",
+        "Condições e suporte definidos em contrato",
+        "Treinamento e onboarding incluídos",
+        "Integrações com outros sistemas avaliadas caso a caso"
+      ]
     }
   ];
 
@@ -113,7 +109,7 @@ const Education = () => {
                 EduGestão <span className="font-light">Pro</span>
               </h1>
               <p className="text-xl text-secondary leading-relaxed mb-10 font-light max-w-2xl">
-                A solução definitiva para secretarias e diretorias que buscam excelência administrativa. Hospedado na nuvem AWS para garantir velocidade nas matrículas e notas.
+                A solução definitiva para secretarias e diretorias que buscam excelência administrativa. Hospedado na nuvem AWS: sem servidor para sua escola instalar ou manter.
               </p>
               <div className="flex gap-4">
                 <Link to="/contato" className="bg-primary text-white px-8 py-4 rounded-xl font-bold inline-flex items-center gap-2 hover:bg-primary-hover transition-all shadow-lg shadow-primary/30">
@@ -163,7 +159,7 @@ const Education = () => {
           <motion.div variants={itemVariants} className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-6">Planos EduGestão <span className="font-light">Pro</span></h2>
             <p className="text-secondary max-w-2xl mx-auto text-lg mb-10">
-              Licenciamento simplificado baseado no tamanho da sua instituição escolar, com infraestrutura em nuvem AWS incluída.
+              Licenciamento simplificado pelo tamanho da sua instituição escolar, com hospedagem em nuvem incluída.
             </p>
 
             {/* Toggle */}
@@ -182,7 +178,7 @@ const Education = () => {
               <div className="flex items-center gap-2">
                 <span className={`text-sm font-bold ${isAnnual ? 'text-primary' : 'text-muted'}`}>Anual</span>
                 <span className="bg-emerald-100 text-emerald-700 text-xs font-bold px-2.5 py-1 rounded-full">
-                  20% OFF
+                  2 MESES GRÁTIS
                 </span>
               </div>
             </div>
@@ -210,16 +206,18 @@ const Education = () => {
                 </div>
 
                 <div className="mb-8">
-                  {typeof plan.price === 'number' ? (
-                    <div className="flex items-baseline gap-1">
-                      <span className="text-4xl font-extrabold tracking-tight">R$ {plan.price}</span>
-                      <span className="text-muted font-medium text-sm">/mês</span>
-                    </div>
-                  ) : (
+                  {plan.price ? (
                     <div className="text-3xl font-extrabold tracking-tight text-slate-800">{plan.price}</div>
-                  )}
-                  {isAnnual && typeof plan.price === 'number' && (
-                    <div className="text-primary text-xs font-semibold mt-2 uppercase tracking-wide">Cobrança Anual</div>
+                  ) : (
+                    <>
+                      <div className="flex items-baseline gap-1">
+                        <span className="text-4xl font-extrabold tracking-tight">R$ {brl(isAnnual ? plan.annual : plan.monthly)}</span>
+                        <span className="text-muted font-medium text-sm">/mês</span>
+                      </div>
+                      <div className="text-primary text-xs font-semibold mt-2 uppercase tracking-wide">
+                        {isAnnual ? `Cobrado anualmente: R$ ${brl(plan.annual * 12)}` : 'Cobrança mensal'}
+                      </div>
+                    </>
                   )}
                 </div>
 
@@ -232,22 +230,11 @@ const Education = () => {
                   ))}
                 </ul>
 
-                <div className="pt-8 border-t border-slate-100 mb-8 space-y-4 bg-slate-50 p-4 rounded-2xl">
-                  <div className="flex items-center gap-3 text-xs font-bold text-slate-500 uppercase tracking-wider">
-                    <Cloud size={14} className="text-primary" />
-                    {plan.infra}
-                  </div>
-                  <div className="flex items-center gap-3 text-xs font-bold text-slate-500 uppercase tracking-wider">
-                    <Activity size={14} className="text-emerald-500" />
-                    SLA: {plan.sla}
-                  </div>
-                </div>
-
                 <Link
                   to="/contato"
                   className={`w-full py-4 rounded-2xl font-bold text-center transition-all ${plan.featured ? 'bg-primary text-white shadow-lg shadow-primary/30 hover:bg-primary-hover hover:-translate-y-1' : 'bg-slate-100 text-slate-800 hover:bg-slate-200'}`}
                 >
-                  {typeof plan.price === 'number' ? 'Começar Agora' : 'Falar com Consultor'}
+                  {plan.price ? 'Falar com Consultor' : 'Começar Agora'}
                 </Link>
               </motion.div>
             ))}

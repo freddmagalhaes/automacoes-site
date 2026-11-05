@@ -47,26 +47,6 @@ const Hero = () => {
               </a>
             </div>
           </motion.div>
-
-          {/* Stats */}
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.8, duration: 1 }}
-            className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-20 pt-10 border-t border-accent"
-          >
-            {[
-              { label: 'Eficiência Elevada', val: '+45%' },
-              { label: 'Redução de Custos', val: '30%' },
-              { label: 'Uptime Cloud', val: '99.9%' },
-              { label: 'Clientes Ativos', val: '100+' },
-            ].map((stat, i) => (
-              <div key={i}>
-                <div className="text-3xl font-extrabold text-primary">{stat.val}</div>
-                <div className="text-xs font-bold uppercase tracking-widest text-muted mt-1">{stat.label}</div>
-              </div>
-            ))}
-          </motion.div>
         </div>
       </div>
     </section>

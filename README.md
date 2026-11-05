@@ -71,3 +71,17 @@ Esse projeto foi um excelente aprendizado para mim! Alguns pontos que me deixara
 ---
 
 Feito com muito ❤️ e café ☕ pela equipe de AutomaçõesTec. Se encontrar algum bug, não hesite em abrir uma issue!
+
+## Planos e preços do SmartMaint
+
+A tabela de `src/pages/Industrial.jsx` deve refletir os limites reais do produto (`server/utils/plans.js` no projeto SmartMaint):
+Essencial (50 ativos, 3 usuários), Profissional (300/10), Industrial (1.000/30) e Corporativo (sob consulta).
+Anual = 10/12 do mensal (2 meses grátis). Não publique SLA, integrações ou números de clientes que o produto/negócio não comprove.
+
+Para exibir o botão "Testar grátis por 14 dias" nos planos, defina no build o endereço da tela de cadastro do SmartMaint:
+
+```bash
+VITE_SMARTMAINT_SIGNUP_URL=https://app.seudominio.com.br/signup npm run build
+```
+
+Sem a variável, o botão não aparece (só "Contratar Sistema" / "Falar com Especialista").

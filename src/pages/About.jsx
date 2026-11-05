@@ -64,7 +64,7 @@ const About = () => {
                   Percebemos que muitas instituições sofriam com a falta de dados confiáveis e processos fragmentados. Nosso objetivo foi criar uma ponte entre a necessidade operacional e a inteligência tecnológica.
                 </p>
                 <p>
-                  Hoje, atendemos dezenas de clientes em todo o território nacional, sempre focados em entregar sistemas que transmitem calma aos gestores através do controle total.
+                  Hoje, desenvolvemos soluções em nuvem para gestão escolar e manutenção industrial, sempre focadas em entregar sistemas que transmitem calma aos gestores através do controle total.
                 </p>
               </div>
             </div>
@@ -73,20 +73,12 @@ const About = () => {
               <div className="glass p-12 rounded-[40px] border-accent relative z-10">
                 <div className="grid grid-cols-2 gap-8">
                   <div className="text-center">
-                    <div className="text-4xl font-bold text-grad mb-2">10+</div>
-                    <div className="text-xs font-bold text-muted uppercase">Anos de Mercado</div>
+                    <div className="text-4xl font-bold text-grad mb-2">2</div>
+                    <div className="text-xs font-bold text-muted uppercase">Soluções</div>
                   </div>
                   <div className="text-center">
-                    <div className="text-4xl font-bold text-grad mb-2">50k+</div>
-                    <div className="text-xs font-bold text-muted uppercase">Usuários Ativos</div>
-                  </div>
-                  <div className="text-center">
-                    <div className="text-4xl font-bold text-grad mb-2">99.9%</div>
-                    <div className="text-xs font-bold text-muted uppercase">Uptime Garantido</div>
-                  </div>
-                  <div className="text-center">
-                    <div className="text-4xl font-bold text-grad mb-2">100%</div>
-                    <div className="text-xs font-bold text-muted uppercase">Nuvem Segura</div>
+                    <div className="text-4xl font-bold text-grad mb-2">MG</div>
+                    <div className="text-xs font-bold text-muted uppercase">Fundada em</div>
                   </div>
                 </div>
               </div>

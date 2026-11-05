@@ -45,10 +45,8 @@ const Footer = () => {
           <div>
             <h4 className="text-lg font-bold mb-6">Empresa</h4>
             <ul className="flex flex-col gap-4 text-sm text-[hsl(var(--text-secondary))]">
-              <li><a href="#" className="hover:text-[hsl(var(--primary))] transition-colors">Sobre Nós</a></li>
-              <li><a href="#" className="hover:text-[hsl(var(--primary))] transition-colors">Cases de Sucesso</a></li>
-              <li><a href="#" className="hover:text-[hsl(var(--primary))] transition-colors">Blog de Tecnologia</a></li>
-              <li><a href="#" className="hover:text-[hsl(var(--primary))] transition-colors">Trabalhe Conosco</a></li>
+              <li><Link to="/sobre" className="hover:text-[hsl(var(--primary))] transition-colors">Sobre Nós</Link></li>
+              <li><Link to="/blog" className="hover:text-[hsl(var(--primary))] transition-colors">Blog de Tecnologia</Link></li>
             </ul>
           </div>
 

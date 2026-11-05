@@ -24,7 +24,7 @@ const Home = () => {
     >
       <SEO 
         title="Início" 
-        description="Soluções nativas na nuvem para escolas de ponta e indústrias 4.0. Escabilidade, segurança AWS e alta performance garantida."
+        description="Sistemas em nuvem para gestão escolar e manutenção industrial: sem servidor para manter e com os dados de cada empresa isolados."
       />
       {/* Hero Section */}
       <section className="relative py-24 md:py-32 overflow-hidden flex items-center min-h-[90vh]">
@@ -44,7 +44,7 @@ const Home = () => {
             </motion.h1>
             
             <motion.p variants={itemVariants} className="text-xl md:text-2xl text-secondary mb-12 max-w-3xl mx-auto font-light leading-relaxed">
-              Soluções nativas na nuvem para escolas de ponta e indústrias 4.0. Escabilidade, segurança AWS e alta performance garantida.
+              Sistemas em nuvem para gestão escolar e manutenção industrial: sem servidor para manter e com os dados de cada empresa isolados.
             </motion.p>
             
             <motion.div variants={itemVariants} className="flex flex-col sm:flex-row items-center justify-center gap-6">
@@ -106,7 +106,7 @@ const Home = () => {
                 </div>
                 <h3 className="text-3xl font-extrabold mb-4">Smart<span className="font-light">Maint</span></h3>
                 <p className="text-secondary text-lg mb-8 flex-grow">
-                  Manutenção industrial 4.0. Controle preventivo, preditivo e corretivo de ativos. Análise FMEA, cálculo de MTBF e simulação R(t) para sua planta.
+                  Manutenção industrial 4.0. Controle preventivo e corretivo de ativos. Análise FMEA, cálculo de MTBF e simulação R(t) para sua planta.
                 </p>
                 <ul className="space-y-4 mb-10">
                   {['Gestão do Ciclo de Vida de O.S.', 'Monitoramento Multi-Tenant', 'Simulador de Confiabilidade R(t)'].map((f, i) => (
@@ -134,18 +134,18 @@ const Home = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
             <motion.div variants={itemVariants}>
               <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-dark mb-8 text-sm font-semibold text-accent-cyan">
-                <Cloud size={16} /> Powered by AWS
+                <Cloud size={16} /> Em nuvem
               </div>
-              <h2 className="text-4xl md:text-5xl font-bold mb-8">Nuvem Corporativa de Alta Performance</h2>
+              <h2 className="text-4xl md:text-5xl font-bold mb-8">Seus dados organizados e protegidos</h2>
               <p className="text-slate-300 text-lg mb-10 leading-relaxed font-light">
-                Esqueça servidores lentos e quedas de sistema. Nossos planos já incluem instâncias dedicadas na Amazon Web Services (AWS), garantindo segurança militar para os dados da sua operação.
+                Sem servidor para instalar nem manter: o sistema roda na nuvem e já vem pronto para usar. Cada empresa enxerga apenas os próprios dados.
               </p>
               
               <div className="space-y-6">
                 {[
-                  { icon: Server, t: "EC2 Auto Scaling", d: "Poder de processamento elástico que cresce com sua demanda." },
-                  { icon: Database, t: "Amazon RDS", d: "Bancos de dados relacionais otimizados com backups automatizados." },
-                  { icon: ShieldCheck, t: "Proteção DDoS", d: "Tráfego filtrado e criptografia SSL de ponta a ponta." }
+                  { icon: Server, t: "Sem instalação", d: "Acesse pelo navegador, de qualquer lugar, sem servidor próprio." },
+                  { icon: Database, t: "Dados isolados por empresa", d: "Cada cliente acessa somente as próprias informações, com isolamento verificado por testes automatizados." },
+                  { icon: ShieldCheck, t: "Acesso controlado", d: "Perfis de acesso por função e proteção contra tentativas repetidas de login." }
                 ].map((item, i) => (
                   <div key={i} className="flex gap-4 p-4 rounded-2xl glass-dark hover:bg-slate-800 transition-colors">
                     <div className="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0 text-accent-cyan bg-accent-cyan/10">
@@ -165,22 +165,22 @@ const Home = () => {
                 <div className="grid grid-cols-2 gap-6">
                   <div className="space-y-6">
                     <div className="glass-dark p-6 rounded-2xl border border-slate-700 bg-slate-800/50">
-                      <div className="text-4xl font-bold text-accent-cyan mb-2">99.9%</div>
-                      <div className="text-xs font-bold text-slate-400 uppercase tracking-wider">Uptime Garantido</div>
+                      <div className="text-4xl font-bold text-accent-cyan mb-2">14 dias</div>
+                      <div className="text-xs font-bold text-slate-400 uppercase tracking-wider">Teste grátis no SmartMaint</div>
                     </div>
                     <div className="bg-gradient-to-br from-primary to-blue-600 p-6 rounded-2xl">
-                      <div className="text-4xl font-bold text-white mb-2">24/7</div>
-                      <div className="text-xs font-bold text-white/80 uppercase tracking-wider">Monitoramento Ativo</div>
+                      <div className="text-4xl font-bold text-white mb-2">Excel</div>
+                      <div className="text-xs font-bold text-white/80 uppercase tracking-wider">Importação de ativos</div>
                     </div>
                   </div>
                   <div className="space-y-6 pt-12">
                     <div className="glass-dark p-6 rounded-2xl border border-slate-700 bg-slate-800/50">
-                      <div className="text-4xl font-bold text-accent-emerald mb-2">Zero</div>
-                      <div className="text-xs font-bold text-slate-400 uppercase tracking-wider">Custo de Deploy</div>
+                      <div className="text-4xl font-bold text-accent-emerald mb-2">Isolados</div>
+                      <div className="text-xs font-bold text-slate-400 uppercase tracking-wider">Dados de cada empresa</div>
                     </div>
                     <div className="glass-dark p-6 rounded-2xl border border-slate-700 bg-slate-800/50">
-                      <div className="text-4xl font-bold text-orange-400 mb-2">SSD</div>
-                      <div className="text-xs font-bold text-slate-400 uppercase tracking-wider">Storage NVMe</div>
+                      <div className="text-4xl font-bold text-orange-400 mb-2">Nuvem</div>
+                      <div className="text-xs font-bold text-slate-400 uppercase tracking-wider">Sem servidor para manter</div>
                     </div>
                   </div>
                 </div>

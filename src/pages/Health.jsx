@@ -1,7 +1,11 @@
+import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { HeartPulse, Users, CalendarDays, ClipboardList, Wallet, ChartNoAxesCombined, CircleHelp, ArrowRight } from 'lucide-react';
+import { HeartPulse, Users, CalendarDays, ClipboardList, Wallet, ChartNoAxesCombined, CircleHelp, ArrowRight, Check } from 'lucide-react';
 import SEO from '../components/SEO';
+import { healthPlans, healthPrice } from '../data/healthPlans';
+
+const brl = (cents) => (cents / 100).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
 
 const modules = [
   {
@@ -37,6 +41,7 @@ const modules = [
 ];
 
 const Health = () => {
+  const [isAnnual, setIsAnnual] = useState(true);
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: { opacity: 1, transition: { staggerChildren: 0.1 } }
@@ -93,6 +98,89 @@ const Health = () => {
                 <p className="text-secondary leading-relaxed font-light">{desc}</p>
               </motion.div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      <section id="planos" className="py-32 bg-slate-50 border-t border-border" aria-labelledby="health-plans-title">
+        <div className="container">
+          <motion.div variants={itemVariants} className="text-center mb-16">
+            <h2 id="health-plans-title" className="text-4xl md:text-5xl font-bold mb-6">Planos para <span className="font-light">Saúde</span></h2>
+            <p className="text-secondary max-w-2xl mx-auto text-lg mb-6">
+              Proposta inicial de valores para sua instituição, com hospedagem AWS, operação contínua
+              e atendimento técnico 24 horas por dia, 7 dias por semana previstos nos planos.
+            </p>
+            <p className="text-sm text-secondary max-w-2xl mx-auto leading-relaxed mb-10">
+              Valores e limites em avaliação. A contratação e a ativação dependem da homologação do sistema
+              e da confirmação da estrutura de operação e suporte.
+            </p>
+            <div className="flex items-center justify-center gap-4">
+              <span className={`text-sm font-bold ${!isAnnual ? 'text-primary' : 'text-muted'}`}>Mensal</span>
+              <button
+                type="button"
+                role="switch"
+                aria-label="Cobrança anual dos planos de Saúde"
+                aria-checked={isAnnual}
+                onClick={() => setIsAnnual(!isAnnual)}
+                className="w-16 h-8 rounded-full relative transition-colors flex items-center px-1"
+                style={{ backgroundColor: isAnnual ? 'hsl(var(--primary))' : '#cbd5e1' }}
+              >
+                <span className="w-6 h-6 rounded-full bg-white transition-transform duration-300 shadow-sm" style={{ transform: isAnnual ? 'translateX(1.5rem)' : 'translateX(0)' }} />
+              </button>
+              <span className={`text-sm font-bold ${isAnnual ? 'text-primary' : 'text-muted'}`}>Anual</span>
+            </div>
+            <p className="text-sm text-emerald-700 font-bold mt-4">Anual: pague o equivalente a 10 mensalidades e use por 12 meses</p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch max-w-6xl mx-auto" aria-live="polite" aria-atomic="true">
+            {healthPlans.map((plan) => {
+              const price = healthPrice(plan, isAnnual);
+              return (
+                <motion.div variants={itemVariants} key={plan.id} className={`relative bg-white rounded-3xl p-6 flex flex-col border transition-all duration-300 ${plan.featured ? 'border-primary shadow-2xl shadow-primary/10' : 'border-border shadow-lg'}`}>
+                  <div className="mb-8">
+                    <h3 className="text-2xl font-bold mb-2">{plan.name}</h3>
+                    <p className="text-secondary text-sm leading-relaxed">{plan.desc}</p>
+                  </div>
+                  <div className="mb-8">
+                    {price ? (
+                      <>
+                        <p className="text-xs font-bold text-muted mb-2">A PARTIR DE</p>
+                        <p className="text-3xl font-extrabold tracking-tight">{brl(price.equivalentMonthlyCents)}</p>
+                        <p className="text-muted text-sm mb-2">{isAnnual ? '/mês equivalente no anual' : '/mês'}</p>
+                        <p className="text-primary text-sm font-bold">
+                          {isAnnual ? `${brl(price.totalCents)} por ano, pagamento antecipado` : 'Cobrança mensal'}
+                        </p>
+                        {isAnnual && <p className="text-sm text-emerald-700 mt-4">Economia de {brl(price.savingsCents)} por ano</p>}
+                      </>
+                    ) : <p className="text-3xl font-extrabold tracking-tight text-slate-800">Sob consulta</p>}
+                  </div>
+                  <ul className="flex flex-col gap-4 mb-10 flex-grow" style={{ listStyle: 'none' }}>
+                    {plan.features.map((feature) => (
+                      <li key={feature} className="flex items-start gap-3 text-sm text-slate-600 font-medium">
+                        <Check size={18} className="text-emerald-500 flex-shrink-0" aria-hidden="true" />
+                        <span>{feature}</span>
+                      </li>
+                    ))}
+                  </ul>
+                  <Link to="/contato" className={`w-full py-4 rounded-2xl font-bold text-center transition-all ${plan.featured ? 'bg-primary text-white shadow-lg shadow-primary/30 hover:bg-secondary' : 'bg-slate-100 text-slate-800 hover:bg-gray-100'}`} aria-label={`Solicitar proposta: ${plan.name}`}>
+                    Solicitar Proposta
+                  </Link>
+                </motion.div>
+              );
+            })}
+          </div>
+
+          <div className="max-w-3xl mx-auto text-center mt-10">
+            <p className="text-sm text-secondary leading-relaxed mb-4">
+              Todos os planos preveem hospedagem AWS, monitoramento, backups e atendimento técnico humano
+              24h/7, com escalonamento especializado conforme a gravidade. Prazos de resposta e recuperação
+              serão definidos em contrato após validação operacional.
+            </p>
+            <p className="text-sm text-secondary leading-relaxed">
+              Implantação, migração, treinamento, integrações e ampliações de capacidade serão orçados
+              separadamente. A proposta definirá armazenamento, retenção de backups, volume de uso e
+              eventuais excedentes antes da contratação. Operação 24h/7 não significa ausência de interrupções.
+            </p>
           </div>
         </div>
       </section>

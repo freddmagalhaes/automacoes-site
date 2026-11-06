@@ -66,7 +66,7 @@ const Education = () => {
       features: [
         "Até 2000 alunos matriculados",
         "Gestão financeira: mensalidades, inadimplência e verbas",
-        "Portal dos Pais e Alunos",
+        "Portal do Aluno (notas, presença e faturas)",
         "Tudo do plano Escola Básica",
         "Suporte por WhatsApp e e-mail"
       ]

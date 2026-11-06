@@ -20,6 +20,7 @@ const Navbar = () => {
     { name: 'Início', path: '/' },
     { name: 'EduGestão Pro', path: '/educacional' },
     { name: 'SmartMaint', path: '/industrial' },
+    { name: 'Saúde', path: '/saude' },
     { name: 'Blog', path: '/blog' },
     { name: 'Sobre Nós', path: '/sobre' },
     { name: 'Contato', path: '/contato' },

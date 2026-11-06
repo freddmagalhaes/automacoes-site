@@ -10,6 +10,7 @@ import Footer from './components/Footer';
 import Home from './pages/Home';
 import Education from './pages/Education';
 import Industrial from './pages/Industrial';
+import Health from './pages/Health';
 import Contact from './pages/Contact';
 import About from './pages/About';
 import Blog from './pages/Blog';
@@ -37,6 +38,7 @@ const App = () => {
                 <Route path="/" element={<Home />} />
                 <Route path="/educacional" element={<Education />} />
                 <Route path="/industrial" element={<Industrial />} />
+                <Route path="/saude" element={<Health />} />
                 <Route path="/blog" element={<Blog />} />
                 <Route path="/contato" element={<Contact />} />
                 <Route path="/sobre" element={<About />} />

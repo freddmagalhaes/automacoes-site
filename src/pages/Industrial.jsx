@@ -217,7 +217,7 @@ const Industrial = () => {
           <motion.div variants={itemVariants} className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-6 text-slate-900">Planos Smart<span className="font-light">Maint</span></h2>
             <p className="text-slate-600 max-w-2xl mx-auto text-lg mb-10">
-              Preço fixo por empresa, sem cobrança por usuário dentro do limite do plano. Hospedagem em nuvem inclusa. Teste grátis por 14 dias, sem cartão de crédito.
+              Preço fixo por empresa, sem cobrança por usuário dentro do limite do plano. Hospedagem em nuvem inclusa. Teste grátis por 14 dias; o cartão de crédito é solicitado no cadastro e a cobrança só começa depois do teste.
             </p>
 
             {/* Toggle */}
@@ -316,7 +316,7 @@ const Industrial = () => {
 
           <p className="text-center text-sm text-slate-500 mt-10 max-w-3xl mx-auto">
             Precisa de mais? Usuário extra: R$ 29/mês cada. Pacote de +100 ativos: R$ 99/mês.
-            Todos os planos incluem 14 dias de teste grátis, sem cartão de crédito. Valores sem impostos.
+            Todos os planos incluem 14 dias de teste grátis. O cartão é solicitado no cadastro e só é cobrado após o teste; cancele antes e não paga nada. Valores sem impostos.
           </p>
         </div>
       </section>
